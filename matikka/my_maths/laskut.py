@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 import logging
-import arvo
-from random import randint as randint
 
 logging.basicConfig(
     format='%(asctime)s %(levelname)-8s %(message)s',
