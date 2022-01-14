@@ -10,14 +10,23 @@ logging.basicConfig(
 
 def kysymys(luvut, merkki):
     logging.debug(luvut)
-
+    retval = 0
+    vast = 0
     kysymys = "Paljonko on"
     for a in luvut:
-        kysymys += " {} {}".format(a, merkki)
+        kysymys += f" {a} {merkki}"
 
     kysymys = kysymys[:-1]+"? "
-    vast = input(kysymys)
-    return int(vast)
+
+    tryagain = True
+    while tryagain == True:
+        try:
+            vast = input(kysymys)
+            retval = int(vast)
+            tryagain = False
+        except ValueError:
+            print("Syötä luku")
+    return retval
 
 
 def laske_tulo(luvut):
@@ -41,3 +50,18 @@ def laske_summa(luvut):
         summa += a
 
     return summa
+
+def laske_kouluarvosana(desimaali):
+    koko = int(desimaali)
+    desi = desimaali-koko
+    merkki = ""
+
+    if desi > .75:
+        merkki = "-"
+        koko +- 1
+    elif desi > .5:
+        merkki = "½"
+    elif desi > .25:
+        merkki = "+"
+
+    return f"{koko}{merkki}"
