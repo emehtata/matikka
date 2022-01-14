@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from setuptools import find_packages, setup
+import subprocess
 
 PKG="matikka"
 name=PKG
-version="0.01"
+version=subprocess.getoutput(["git", "describe"])
 description="Matikkapeli"
 
 if __name__ == "__main__":
