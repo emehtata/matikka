@@ -6,7 +6,9 @@ Asennettuna Python 3 (testattu 3.8.10)
 
 ## Asennus
 
-pip3 install .
+clone repository: `git clone git@github.com:emehtata/matikka.git`
+
+`pip3 install .`
 
 ## Käyttö
 
@@ -14,7 +16,7 @@ pip3 install .
 
 `matikka` - opettele kertotauluja 1-10
 
-`matikka [<kertotaulu>]` = opettele kertotaulua, esim. `matikka 3` = opettele 3:n kertotaulua
+`matikka <kertotaulu> = opettele kertotaulua, esim. `matikka 3` = opettele 3:n kertotaulua
 
 ### Palaute
 
