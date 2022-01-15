@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
 import logging
+import sys
 from .my_maths import arvo
 from .my_maths import laskut
+
 
 logging.basicConfig(
     format='%(asctime)s %(levelname)-8s %(message)s',
@@ -11,14 +13,21 @@ logging.basicConfig(
 
 
 def main():
+    taulu=0
+    if len(sys.argv) > 1:
+        taulu=int(sys.argv[1])
     MAX_TRY = 2
     o_count = 0
     laskettu = 0
-    TOTAL = 20
+    TOTAL = 10
+
+    #    summa = laskut.laske_summa(luvut)
+    #    erotus = laskut.laske_erotus(luvut)
+    #    osamaara = laskut.laske_osamaara(luvut)
+
     for i in range(0, TOTAL):
-        luvut = arvo.arvo_luvut()
+        luvut = arvo.arvo_luvut(taulu=taulu)
         tulo = laskut.laske_tulo(luvut)
-        summa = laskut.laske_summa(luvut)
         oikein = False
         tries = 0
         laskettu += 1

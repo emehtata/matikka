@@ -5,7 +5,8 @@ import subprocess
 
 PKG="matikka"
 name=PKG
-version=subprocess.getoutput(["git", "describe"])
+version=subprocess.getoutput('git describe')
+# version=version.replace("-", "+")
 description="Matikkapeli"
 
 if __name__ == "__main__":

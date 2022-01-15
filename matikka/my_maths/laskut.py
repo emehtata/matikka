@@ -51,6 +51,12 @@ def laske_summa(luvut):
 
     return summa
 
+def laske_osamaara(luvut):  
+    # TODO
+    jaettava = laske_tulo(luvut)
+    return 0
+
+
 def laske_kouluarvosana(desimaali):
     koko = int(desimaali)
     desi = desimaali-koko
