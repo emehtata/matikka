@@ -16,7 +16,7 @@ clone repository: `git clone git@github.com:emehtata/matikka.git`
 
 `matikka` - opettele kertotauluja 1-10
 
-`matikka <kertotaulu> = opettele kertotaulua, esim. `matikka 3` = opettele 3:n kertotaulua
+`matikka <kertotaulu>` = opettele kertotaulua, esim. `matikka 3` = opettele 3:n kertotaulua
 
 ### Palaute
 
