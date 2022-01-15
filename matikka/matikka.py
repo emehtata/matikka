@@ -16,7 +16,7 @@ def main():
     taulu=0
     if len(sys.argv) > 1:
         taulu=int(sys.argv[1])
-    MAX_TRY = 2
+    MAX_TRY = 3
     o_count = 0
     laskettu = 0
     TOTAL = 10
@@ -49,7 +49,8 @@ def main():
         else:
             if oikein == False:
                 print(
-                    f"Nyt ei tullut oikeaa vastausta {MAX_TRY} yritykselläkään. :((((\n")
+                    f"Nyt ei tullut oikeaa vastausta {MAX_TRY} yritykselläkään. :((((")
+                print(f"Oikea vastaus olisi ollut {tulo}.\n")
 
         print(f"Oikeat vastaukset: {o_count}/{laskettu}")
         print("-"*40)
