@@ -12,13 +12,13 @@ pip3 install .
 
 ### Kertotaulut
 
-`matikka [<kertotaulu>]`
+`matikka` - opettele kertotauluja 1-10
 
-<kertotaulu> = Kertotaulu jota haluat harjoitella esim. `matikka 3` = opettele 3:n kertotaulua
+`matikka [<kertotaulu>]` = opettele kertotaulua, esim. `matikka 3` = opettele 3:n kertotaulua
 
-### Palautus
+### Palaute
 
-Antaa tulokseksi kouluarvosanan suomalaisen asteikon mukaan 4-10
+Antaa tulokseksi kouluarvosanan suomalaisen asteikon mukaan 4-10.
 
 ## Tuetut laskutoimitukset
 
