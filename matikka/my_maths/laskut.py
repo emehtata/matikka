@@ -51,7 +51,8 @@ def laske_summa(luvut):
 
     return summa
 
-def laske_osamaara(luvut):  
+
+def laske_osamaara(luvut):
     # TODO
     jaettava = laske_tulo(luvut)
     return 0
@@ -64,7 +65,7 @@ def laske_kouluarvosana(desimaali):
 
     if desi > .75:
         merkki = "-"
-        koko +- 1
+        koko + - 1
     elif desi > .5:
         merkki = "½"
     elif desi > .25:

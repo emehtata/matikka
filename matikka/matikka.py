@@ -2,17 +2,25 @@
 
 import logging
 import sys
-from .my_maths import arvo
-from .my_maths import laskut
+import argparse
+import random
 
+from .my_maths import arvo, laskut
 
 logging.basicConfig(
     format='%(asctime)s %(levelname)-8s %(message)s',
-    level=logging.INFO,
+    level=logging.DEBUG,
     datefmt='%Y-%m-%d %H:%M:%S')
 
+def parse_options():
+    parser = argparse.ArgumentParser(description='Laskutehtävien valinnat.')
+    parser.add_argument('integers', metavar='N', type=int, nargs='+',
+                        help='Käytä aina tätä lukua, esim. kertotaulu.')
+    parser.add_argument('--summa', dest='accumulate', action='store_const',
+                    const=sum, default=max,
+                    help='sum the integers (default: find the max)')
 
-def main():
+def laskukoe():
     taulu=0
     if len(sys.argv) > 1:
         taulu=int(sys.argv[1])
@@ -58,6 +66,42 @@ def main():
     arvosana = laskut.laske_kouluarvosana(o_count/laskettu*6+4)
     print(f"Tulos: {arvosana}")
 
+def kertotaulu():
+    o_total=0
+    k_total=0
+    if len(sys.argv) > 1:
+        kertoja=int(sys.argv[1])
+    else:
+        print(f"{sys.argv[0]} kertoja")
+        sys.exit(0)
+
+    taulu = arvo.tee_kertotaulu(kertoja)
+
+    while len(taulu) > 0:
+        print("-"*40)
+        k_total+=1
+        print(f"Kysymyksiä jäljellä: {len(taulu)}")
+        r=random.randint(0,len(taulu)-1)
+        tulo = laskut.laske_tulo(taulu[r])
+        vastaus = laskut.kysymys(taulu[r], "x")
+        if vastaus == tulo:
+            print("\nOikein! :)")
+            taulu.pop(r)
+            logging.debug(f"{taulu}")
+            o_total+=1
+            continue
+        else:
+            print("Ei :(")
+    
+    print("-"*40)
+    print(f"Oikeat vastaukset: {o_total}/{k_total}")
+    print("-"*40)
+
+    arvosana = laskut.laske_kouluarvosana(o_total/k_total*6+4)
+    print(f"Tulos: {arvosana}")
+
+def main():
+    kertotaulu()
 
 if __name__ == '__main__':
     main()

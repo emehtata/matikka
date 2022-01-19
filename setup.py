@@ -3,11 +3,10 @@
 from setuptools import find_packages, setup
 import subprocess
 
-PKG="matikka"
-name=PKG
-version=subprocess.getoutput('git describe')
-# version=version.replace("-", "+")
-description="Matikkapeli"
+PKG = "matikka"
+name = PKG
+version = subprocess.getoutput('git describe')
+description = "Matikkapeli"
 
 if __name__ == "__main__":
     print(find_packages())
